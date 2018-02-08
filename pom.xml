@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ctbc</groupId>
+	<artifactId>quartz_test</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Servlet 3 Web Application</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-version>1.8</java-version>
+		<quartz-all-version>1.6.1</quartz-all-version>
+		<quartz-jobs-version>2.2.1</quartz-jobs-version>
+	</properties>
+
+	<dependencies>
+		<!-- Servlet 3.0 API -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- QUARTZ -->
+		<!-- https://mvnrepository.com/artifact/org.opensymphony.quartz/quartz-all -->
+		<dependency>
+		    <groupId>org.opensymphony.quartz</groupId>
+		    <artifactId>quartz-all</artifactId>
+		    <version>${quartz-all-version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<dependency>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging</artifactId>
+		    <version>1.2</version>
+		</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/commons-digester/commons-digester -->
+		<dependency>
+		    <groupId>commons-digester</groupId>
+		    <artifactId>commons-digester</artifactId>
+		    <version>1.8</version>
+		</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+		<dependency>
+		    <groupId>commons-collections</groupId>
+		    <artifactId>commons-collections</artifactId>
+		    <version>3.2.1</version>
+		</dependency>
+	
+		<!-- JAVAX.TRANSACTION/JTA -->
+		<dependency>
+		    <groupId>javax.transaction</groupId>
+		    <artifactId>jta</artifactId>
+		    <version>1.1</version>
+		</dependency>
+
+		<!-- LOG4J -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.0</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
