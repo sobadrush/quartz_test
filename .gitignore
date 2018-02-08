@@ -1,3 +1,7 @@
+### Log File ###
+src/main/webapp/dailylog/**
+
+
 ### Java template
 *.class
 
