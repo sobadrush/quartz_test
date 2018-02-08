@@ -7,12 +7,12 @@ import javax.servlet.annotation.WebListener;
 @WebListener
 public class SystemListener implements ServletContextListener {
 
-	private static final String logFilePath = "D:\\02.project_workspaces\\_2018\\workspace_PCMS\\quartz_test\\src\\main\\webapp\\dailyLog";
 	
 	@Override
-	public void contextInitialized(ServletContextEvent arg0) {
+	public void contextInitialized(ServletContextEvent sce) {
 		
-		System.setProperty("MY_LOG_PATH", logFilePath);
+		String LOG_FILE_PATH = sce.getServletContext().getInitParameter("LOG_FILE_PATH");
+		System.setProperty("MY_LOG_PATH", LOG_FILE_PATH);
 		
 //		Properties props = System.getProperties();
 //		Set<Entry<Object, Object>> eSet = props.entrySet();
@@ -22,7 +22,7 @@ public class SystemListener implements ServletContextListener {
 	}
 	
 	@Override
-	public void contextDestroyed(ServletContextEvent arg0) {
+	public void contextDestroyed(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
 	}
 
