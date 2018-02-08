@@ -10,6 +10,7 @@ import org.quartz.JobExecutionException;
 
 // http://blog.csdn.net/evankaka/article/details/45361759s
 // http://yahaitt.iteye.com/blog/122720
+// http://webcache.googleusercontent.com/search?q=cache:W1mIgUwxk7gJ:polinwei.blogspot.com/2008/11/java-quartz.html+&cd=2&hl=zh-TW&ct=clnk&gl=tw
 public class My_quartz_demo implements Job {
 	private Logger logger = Logger.getLogger(this.getClass());
 
